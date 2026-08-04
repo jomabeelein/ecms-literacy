@@ -116,7 +116,7 @@ class MantrasApp {
     `).join('');
   }
 
-  // OPEN MANTRA MODAL (UPDATED WITH MISCONCEPTIONS & COUNTER-ROUTINES)
+  // OPEN MANTRA MODAL (WITH MISCONCEPTIONS & COUNTER-ROUTINES)
   openMantraModal(mantraId) {
     const mantra = MANTRAS_DATA.find(m => m.id === mantraId);
     if (!mantra) return;
@@ -148,7 +148,6 @@ class MantrasApp {
         <p style="margin-top:6px; font-size:1.05rem; font-style:italic;">"${mantra.verbatimTeacherScript}"</p>
       </div>
 
-      <!-- MISCONCEPTION & COUNTER-ROUTINE SECTION -->
       <div style="background:rgba(239, 68, 68, 0.08); border-left:5px solid #EF4444; padding:18px; border-radius:var(--radius-sm);">
         <strong style="color:#B91C1C; text-transform:uppercase; font-size:0.85rem; letter-spacing:0.5px; display:block; margin-bottom:4px;">
           ⚠️ Common Student Misconception & Breakdown:
@@ -202,7 +201,7 @@ class MantrasApp {
     document.getElementById('mantra-modal').classList.remove('active');
   }
 
-  // VIEW 2: RENDER STRATEGY BANK
+  // VIEW 2: RENDER STRATEGY BANK (INCLUDES STRUGGLING READER GUIDE & SPANISH PHRASE KIT)
   renderStrategyBank(filterTab) {
     const container = document.getElementById('strategy-bank-content');
     if (!container) return;
@@ -210,13 +209,18 @@ class MantrasApp {
     if (filterTab === 'bank-struggling') {
       container.innerHTML = `
         <div class="generator-card">
-          <div style="background:var(--brand-gradient); color:var(--text-on-red); padding:20px; border-radius:var(--radius-md); margin-bottom:24px; box-shadow:var(--shadow-red);">
-            <h3 style="font-family:var(--font-heading); font-size:1.4rem; font-weight:800; margin-bottom:6px;">
-              Middle School Struggling Reader Prompting Guide (Grades 6-8)
-            </h3>
-            <p style="font-size:0.95rem; opacity:0.95;">
-              Targeted teacher launch prompts categorized by middle school Lexile bands (400L - 1200L+) to address common middle grade reading breakdowns.
-            </p>
+          <div style="background:var(--brand-gradient); color:var(--text-on-red); padding:20px; border-radius:var(--radius-md); margin-bottom:24px; box-shadow:var(--shadow-red); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div>
+              <h3 style="font-family:var(--font-heading); font-size:1.4rem; font-weight:800; margin-bottom:6px;">
+                Middle School Struggling Reader Prompting Guide (Grades 6-8)
+              </h3>
+              <p style="font-size:0.95rem; opacity:0.95;">
+                Targeted teacher launch prompts categorized by middle school Lexile bands (400L - 1200L+) to address common middle grade reading breakdowns.
+              </p>
+            </div>
+            <button class="btn btn-secondary" onclick="app.navigateTo('view-printable-studio'); setTimeout(() => app.renderPrintableStudio('print-struggling-guide'), 100);" style="background:#FFFFFF; color:var(--brand-primary); border:none; font-weight:700;">
+              🖨️ Print Full Guide
+            </button>
           </div>
 
           <div style="display:flex; flex-direction:column; gap:24px;">
@@ -236,7 +240,7 @@ class MantrasApp {
                       <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:10px;"><strong>Observed Student Error:</strong> ${item.studentError}</p>
                       <div class="prompt-box" style="margin-top:0;">
                         <strong style="color:var(--bright-accent-red); font-size:0.8rem; text-transform:uppercase;">Targeted Teacher Launch Prompts:</strong>
-                        <ul>
+                        <ul style="margin-top:4px;">
                           ${item.prompts.map(p => `<li>"${p}"</li>`).join('')}
                         </ul>
                       </div>
@@ -254,15 +258,53 @@ class MantrasApp {
     if (filterTab === 'bank-mll') {
       container.innerHTML = `
         <div class="generator-card">
-          <div style="background:var(--brand-gradient); color:var(--text-on-red); padding:20px; border-radius:var(--radius-md); margin-bottom:24px; box-shadow:var(--shadow-red);">
-            <h3 style="font-family:var(--font-heading); font-size:1.4rem; font-weight:800; margin-bottom:6px;">
-              Non-English Speakers (Multilingual Learners / ELD / SLIFE) Support
-            </h3>
-            <p style="font-size:0.95rem; opacity:0.95;">
-              Targeted instructional practices for supporting non-English speakers, Students with Interrupted Formal Education (SLIFE), and Multilingual Learners (MLL).
-            </p>
+          <div style="background:var(--brand-gradient); color:var(--text-on-red); padding:20px; border-radius:var(--radius-md); margin-bottom:24px; box-shadow:var(--shadow-red); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+            <div>
+              <h3 style="font-family:var(--font-heading); font-size:1.4rem; font-weight:800; margin-bottom:6px;">
+                Non-English Speakers (Multilingual Learners / ELD / SLIFE) Support
+              </h3>
+              <p style="font-size:0.95rem; opacity:0.95;">
+                Instructional strategies, bilingual cognates, and a high-utility <strong>Teacher Spanish Phrase Kit</strong> for supporting Spanish-speaking newcomers and ELD students.
+              </p>
+            </div>
+            <button class="btn btn-secondary" onclick="app.navigateTo('view-printable-studio'); setTimeout(() => app.renderPrintableStudio('print-spanish-phrases'), 100);" style="background:#FFFFFF; color:var(--brand-primary); border:none; font-weight:700;">
+              🖨️ Print Spanish Phrase Kit
+            </button>
           </div>
 
+          <!-- TEACHER SPANISH PHRASE KIT SECTION -->
+          <div style="border:2px solid var(--cardinal-red); border-radius:var(--radius-md); padding:24px; background:var(--bg-card); margin-bottom:32px; box-shadow:var(--shadow-md);">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+              <div>
+                <span class="hero-badge" style="background:var(--cardinal-red);">Bilingual Support Tool</span>
+                <h4 style="font-family:var(--font-heading); font-size:1.35rem; color:var(--cardinal-red); margin-top:4px;">
+                  🇲🇽 Teacher Spanish Classroom Phrase Kit
+                </h4>
+              </div>
+              <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted);">High-Utility Phrases for Content Teachers</span>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:20px;">
+              ${SPANISH_TEACHER_PHRASES_DATASET.map(cat => `
+                <div style="background:var(--bg-tertiary); padding:18px; border-radius:var(--radius-sm); border-left:4px solid var(--cardinal-red);">
+                  <h5 style="font-family:var(--font-heading); font-size:1.05rem; color:var(--cardinal-red); margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+                    <span>${cat.icon}</span> ${cat.category}
+                  </h5>
+                  <div style="display:flex; flex-direction:column; gap:10px;">
+                    ${cat.phrases.map(p => `
+                      <div style="background:var(--bg-card); padding:8px 12px; border-radius:4px; border:1px solid var(--border-color);">
+                        <div style="font-weight:700; color:var(--cardinal-red); font-size:0.95rem;">"${p.es}"</div>
+                        <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:2px;">English: "${p.en}"</div>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- CORE MLL INSTRUCTIONAL STRATEGIES -->
+          <h4 style="font-family:var(--font-heading); font-size:1.25rem; color:var(--text-primary); margin-bottom:16px;">Core Instructional Strategies for Non-English Speakers:</h4>
           <div style="display:flex; flex-direction:column; gap:20px;">
             ${MLL_SLIFE_STRATEGIES_DATASET.map(s => `
               <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:20px;">
@@ -498,10 +540,8 @@ class MantrasApp {
       `;
       this.updateFrameworkResult();
     } else if (genTab === 'gen-close-read') {
-      // 3-PASS CLOSE READING GENERATOR WITH PROMINENT CURRICULUM DISCLAIMER BANNER
       container.innerHTML = `
         <div class="generator-card">
-          <!-- PROMINENT CURRICULUM MANDATE DISCLAIMER -->
           <div style="background:#FFFBEB; border:2px solid #F59E0B; border-radius:var(--radius-md); padding:18px 24px; margin-bottom:24px; box-shadow:var(--shadow-sm);">
             <div style="display:flex; align-items:flex-start; gap:12px;">
               <span style="font-size:1.6rem; line-height:1;">⚠️</span>
@@ -581,15 +621,23 @@ class MantrasApp {
     } else if (genTab === 'gen-struggling-prompts') {
       container.innerHTML = `
         <div class="generator-card">
-          <h3 style="font-family:var(--font-heading); color:var(--brand-primary); margin-bottom:16px;">
-            Middle School Struggling Reader Prompting Tool (Grades 6-8)
-          </h3>
-          <p style="color:var(--text-secondary); margin-bottom:20px;">
-            Select your middle school student's Lexile Band to generate targeted teacher launch prompts.
-          </p>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
+            <div>
+              <h3 style="font-family:var(--font-heading); color:var(--brand-primary); font-size:1.4rem;">
+                Middle School Struggling Reader Prompting Tool (Grades 6-8)
+              </h3>
+              <p style="color:var(--text-secondary); margin-top:4px;">
+                Select your middle school student's Lexile Band to generate targeted teacher launch prompts.
+              </p>
+            </div>
+            <button class="btn btn-secondary" onclick="app.navigateTo('view-printable-studio'); setTimeout(() => app.renderPrintableStudio('print-struggling-guide'), 100);" style="font-weight:700;">
+              🖨️ Print Full Guide
+            </button>
+          </div>
+
           <div class="form-group" style="margin-bottom:20px;">
-            <label class="form-label">Select Middle School Lexile Band:</label>
-            <select id="lexile-band-select" class="form-select" onchange="app.updateStrugglingPromptResult()">
+            <label class="form-label" style="font-weight:700;">Select Middle School Lexile Band:</label>
+            <select id="lexile-band-select" class="form-select" style="padding:12px; font-size:1rem;" onchange="app.updateStrugglingPromptResult()">
               ${STRUGGLING_READER_PROMPTING_DATASET.map(band => `<option value="${band.lexileBand}">${band.lexileBand} — ${band.gradeLevel}</option>`).join('')}
             </select>
           </div>
@@ -610,7 +658,7 @@ class MantrasApp {
     }
   }
 
-  // TOPIC-BASED 3-PASS CLOSE READING GENERATOR (DYNAMIC PURPOSES & DEMONSTRATION QUESTIONS)
+  // TOPIC-BASED 3-PASS CLOSE READING GENERATOR
   generateTopicCloseReadPlan() {
     const topicText = document.getElementById('close-read-topic-input')?.value || 'The Giver - Dystopian Society';
     const resultBox = document.getElementById('close-read-result');
@@ -644,7 +692,6 @@ class MantrasApp {
     resultBox.innerHTML = `
       <div style="border:2px solid var(--brand-primary); border-radius:var(--radius-md); padding:24px; background:var(--bg-card); box-shadow:var(--shadow-md);">
         
-        <!-- INNER DISCLAIMER -->
         <div style="background:#FFFBEB; border-left:4px solid #F59E0B; padding:10px 14px; border-radius:4px; margin-bottom:16px; font-size:0.85rem; color:#92400E;">
           <strong>📌 Note to Teachers:</strong> Always utilize curriculum-provided questions from StudySync/Inspire Science/Savvas during actual instruction. The sample questions below model the progression of depth across 3 reads.
         </div>
@@ -865,7 +912,7 @@ class MantrasApp {
     `).join('');
   }
 
-  // VIEW 5: RENDER PRINTABLE STUDIO
+  // VIEW 5: RENDER PRINTABLE STUDIO (INCLUDES SPANISH PHRASES & STRUGGLING READER GUIDES)
   renderPrintableStudio(printTab) {
     const container = document.getElementById('printable-studio-display');
     if (!container) return;
@@ -936,6 +983,96 @@ class MantrasApp {
           </div>
         </div>
       `).join('');
+    } else if (printTab === 'print-spanish-phrases') {
+      // PRINTABLE TEACHER SPANISH PHRASE CHEAT SHEET
+      container.innerHTML = `
+        <div class="print-master-poster">
+          <div class="print-header-banner">
+            <div class="print-logo-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="54" height="54">
+                <path d="M15 45 C10 25 35 10 75 15 C85 30 80 50 65 60 L68 90 L50 75 C30 80 15 65 15 45 Z" fill="#AB3633"/>
+                <polygon points="75,25 98,35 75,45" fill="#F59E0B"/>
+                <path d="M60 25 Q70 30 65 42 Q50 40 60 25 Z" fill="#2B1F20"/>
+                <circle cx="55" cy="30" r="4" fill="#FFFFFF"/>
+              </svg>
+              <div>
+                <h1 class="print-master-title">East Central Middle School</h1>
+                <p style="font-size:1.1rem; font-weight:700; color:var(--cardinal-red); text-transform:uppercase; letter-spacing:2px;">🇲🇽 Teacher Spanish Classroom Phrase Cheat Sheet</p>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <span class="hero-badge" style="background:var(--cardinal-red);">Multilingual Learners Support</span>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:20px;">
+            ${SPANISH_TEACHER_PHRASES_DATASET.map(cat => `
+              <div style="border:2px solid var(--cardinal-red); border-radius:var(--radius-sm); padding:16px; background:#FFFFFF;">
+                <h3 style="font-family:var(--font-heading); font-size:1.05rem; font-weight:800; color:var(--cardinal-red); margin-bottom:10px; border-bottom:2px solid var(--cardinal-red); padding-bottom:4px;">
+                  ${cat.icon} ${cat.category}
+                </h3>
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                  ${cat.phrases.map(p => `
+                    <div style="background:var(--off-white); padding:8px 10px; border-radius:4px; border-left:3px solid var(--cardinal-red); font-size:0.85rem;">
+                      <div style="font-weight:700; color:var(--charcoal);">ES: "${p.es}"</div>
+                      <div style="font-style:italic; color:var(--warm-gray); margin-top:2px;">EN: "${p.en}"</div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    } else if (printTab === 'print-struggling-guide') {
+      // PRINTABLE MIDDLE SCHOOL STRUGGLING READER PROMPTING GUIDE
+      container.innerHTML = `
+        <div class="print-master-poster">
+          <div class="print-header-banner">
+            <div class="print-logo-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="54" height="54">
+                <path d="M15 45 C10 25 35 10 75 15 C85 30 80 50 65 60 L68 90 L50 75 C30 80 15 65 15 45 Z" fill="#AB3633"/>
+                <polygon points="75,25 98,35 75,45" fill="#F59E0B"/>
+                <path d="M60 25 Q70 30 65 42 Q50 40 60 25 Z" fill="#2B1F20"/>
+                <circle cx="55" cy="30" r="4" fill="#FFFFFF"/>
+              </svg>
+              <div>
+                <h1 class="print-master-title">East Central Middle School</h1>
+                <p style="font-size:1.1rem; font-weight:700; color:var(--cardinal-red); text-transform:uppercase; letter-spacing:2px;">📖 Middle School Struggling Reader Prompting Guide</p>
+              </div>
+            </div>
+            <div style="text-align:right;">
+              <span class="hero-badge" style="background:var(--cardinal-red);">Grades 6-8 Lexile Bands</span>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:20px;">
+            ${STRUGGLING_READER_PROMPTING_DATASET.map(band => `
+              <div style="border:2px solid var(--cardinal-red); border-radius:var(--radius-sm); padding:16px; background:#FFFFFF;">
+                <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid var(--cardinal-red); padding-bottom:6px; margin-bottom:12px;">
+                  <span class="lexile-badge" style="background:var(--cardinal-red); color:#FFFFFF;">${band.lexileBand}</span>
+                  <span style="font-weight:700; font-size:0.9rem; color:var(--charcoal);">${band.gradeLevel}</span>
+                  <span style="font-size:0.8rem; font-weight:600; color:var(--warm-gray);">Focus: ${band.focusArea}</span>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;">
+                  ${band.items.map(item => `
+                    <div style="background:var(--off-white); padding:10px 12px; border-radius:4px; border-left:3px solid var(--cardinal-red); font-size:0.85rem;">
+                      <strong style="color:var(--cardinal-red); font-size:0.9rem;">${item.element}</strong>
+                      <div style="font-size:0.8rem; color:var(--charcoal); margin-top:2px; margin-bottom:4px;"><strong>Error:</strong> ${item.studentError}</div>
+                      <div style="font-style:italic; color:var(--warm-gray); background:#FFFFFF; padding:6px; border-radius:4px; border:1px solid #E2DDD5;">
+                        <strong>Prompts:</strong>
+                        <ul style="padding-left:14px; margin-top:2px;">
+                          ${item.prompts.map(p => `<li>"${p}"</li>`).join('')}
+                        </ul>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
     } else if (printTab === 'print-bilingual-cards') {
       container.innerHTML = `
         <div class="desk-cards-grid">
@@ -995,7 +1132,7 @@ class MantrasApp {
         title: "ECMS Literacy Mantras Professional Development",
         content: `
           <h3 style="color:var(--bright-accent-red); margin-bottom:12px;">Transforming Middle School Instructional Culture</h3>
-          <p>Welcome, East Central Middle School Leaders and Teachers! Today we launch our 8 Literacy Mantras framework aligned with StudySync, Inspire Science, Savvas, NatGeo ELD, the Tulsa Way Rubric (June 2025), and Tulsa Model TLE Rubric.</p>
+          <p>Welcome, East Central Middle School Leaders and Teachers! Today we launch our 8 Literacy Mantras framework aligned with StudySync, Inspire Science, Savvas, NatGeo ELD, the Tulsa Way Rubric, and Tulsa Model TLE Rubric.</p>
         `
       },
       ...MANTRAS_DATA.map(m => ({

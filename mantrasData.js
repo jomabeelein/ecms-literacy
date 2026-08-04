@@ -1,7 +1,7 @@
 // ECMS 8 Literacy Mantras Complete Dataset - Middle School Edition (Grades 6-8)
 // Aligned with StudySync (ELA), Inspire Science (Science), Savvas (Social Studies & Math), National Geographic (ELD)
-// Aligned with Tulsa Way Rubric for Teacher Growth (June 2025) and Tulsa Model TLE Rubric (20 Dimensions)
-// Integrated with Middle School Struggling Reader Prompting Guide (400L - 1200L+), MLL/SLIFE Support, Bilingual Desk Cards, RACES/CER Framework, and Gamified Reading Systems.
+// Aligned with Tulsa Way Rubric for Teacher Growth and Tulsa Model TLE Rubric (20 Dimensions)
+// Integrated with Middle School Struggling Reader Prompting Guide (400L - 1200L+), MLL/SLIFE Support, Bilingual Desk Cards, RACES/CER Framework, Spanish Teacher Phrases, and Gamified Reading Systems.
 
 const MANTRAS_DATA = [
   {
@@ -647,488 +647,322 @@ const MANTRAS_DATA = [
   }
 ];
 
-// TOPIC-BASED 3-PASS CLOSE READING GENERATOR DATASETS
-const TOPIC_PRESETS_DATASET = [
-  {
-    topicId: "topic-giver",
-    topicName: "The Giver / Dystopian Society (StudySync ELA)",
-    subject: "ELA",
-    writingFramework: "RACES (Restate, Answer, Cite, Explain, Sum Up)",
-    read1: {
-      purpose: "Establish baseline understanding of the Community's rules, setting, and Jonas's role.",
-      teacherScript: "Pass 1 is our baseline map! As we read, focus on answering: What rules govern Jonas's society and how do characters react to them?",
-      questions: [
-        "What specific rules or social expectations govern the Community in this passage?",
-        "Who are the main characters involved, and what is Jonas's primary role or observation?",
-        "What key event or memory causes a shift in Jonas's understanding of his world?"
-      ]
-    },
-    read2: {
-      purpose: "Analyze author's word choice, tone shifts, and symbolic imagery (e.g. pale eyes, color, release).",
-      teacherScript: "Pass 2 is our Detective Zoom-In! Re-read Paragraphs 2 and 3 to discover HOW Lois Lowry uses word choice to build tension.",
-      questions: [
-        "Why does the author use clinical words like 'Release' and 'Sameness' instead of direct terms? What tone does this create?",
-        "How does paragraph 3 build tension compared to the calm tone in paragraph 1?",
-        "What symbolic meaning does the appearance of color or memory represent in this section?"
-      ]
-    },
-    read3: {
-      purpose: "Extract line-number evidence to write a RACES response analyzing Jonas's moral growth.",
-      teacherScript: "Pass 3 is Evidence Mining! Re-read key lines to gather exact quotes for your RACES response about Jonas's choice.",
-      questions: [
-        "Which specific line numbers provide the strongest evidence that Jonas no longer trusts the Chief Elder?",
-        "How does the author's reasoning address the trade-offs between absolute safety and human freedom?",
-        "Using line citations, what RACES conclusion can you draw about Jonas's moral responsibility?"
-      ]
-    }
-  },
-  {
-    topicId: "topic-photosynthesis",
-    topicName: "Photosynthesis & Cellular Energy (Inspire Science)",
-    subject: "Science",
-    writingFramework: "CER (Claim, Evidence, Reasoning)",
-    read1: {
-      purpose: "Establish baseline understanding of plant cell energy inputs and outputs.",
-      teacherScript: "Pass 1 is our scientific overview! As we read, answer: What materials do plants take in, and what do they produce?",
-      questions: [
-        "What are the primary chemical inputs (reactants) and outputs (products) of photosynthesis?",
-        "Where inside the plant cell does this energy conversion process take place?",
-        "What is the main biological purpose of photosynthesis for the plant's survival?"
-      ]
-    },
-    read2: {
-      purpose: "Dissect domain-specific vocabulary (chloroplast, chlorophyll, photons) and diagram labels.",
-      teacherScript: "Pass 2 is our Lab Microscope Pass! Re-read Section 2 to dissect domain vocabulary and chemical equations.",
-      questions: [
-        "Why is the term 'chlorophyll' essential in paragraph 2, and what specific role does it play in light absorption?",
-        "How does the chemical equation in the diagram reinforce the text explanation in paragraph 3?",
-        "What distinction does the text make between light-dependent reactions and the Calvin cycle?"
-      ]
-    },
-    read3: {
-      purpose: "Extract empirical data and text evidence to write a Science CER explanation.",
-      teacherScript: "Pass 3 is Data Extraction! Re-read the lab passage to collect exact numbers and evidence for your CER claim.",
-      questions: [
-        "What specific lab data or line citations support the claim that light intensity increases oxygen output?",
-        "What scientific reasoning connects photon absorption to the breakdown of water molecules?",
-        "Construct a CER statement: What conclusion can be drawn about plant growth in low-light environments?"
-      ]
-    }
-  },
-  {
-    topicId: "topic-civil-rights",
-    topicName: "Civil Rights Movement & Primary Sources (Savvas Social Studies)",
-    subject: "Social Studies",
-    writingFramework: "RACES (Restate, Answer, Cite, Explain, Sum Up)",
-    read1: {
-      purpose: "Establish historical context, author background, and the primary grievance addressed in the document.",
-      teacherScript: "Pass 1 is our Historical Overview! As we read, answer: What injustice is being challenged, and who is speaking?",
-      questions: [
-        "What historical injustice or constitutional grievance is the author addressing in this document?",
-        "Who is the intended audience, and what action is the author urging them to take?",
-        "What main event or protest led to the creation of this historical text?"
-      ]
-    },
-    read2: {
-      purpose: "Perform HIPP Analysis (Historical Context, Audience, Purpose, Author Perspective) and analyze persuasive rhetoric.",
-      teacherScript: "Pass 2 is HIPP Interrogation! Re-read paragraph 3 to identify the author's point of view and persuasive word choices.",
-      questions: [
-        "What emotionally charged words or constitutional references does the author use to persuade the reader?",
-        "How does the author's personal background or leadership role shape their perspective in paragraph 2?",
-        "What counterargument does the author anticipate and refute in the text?"
-      ]
-    },
-    read3: {
-      purpose: "Gather direct quotes to write a RACES DBQ paragraph evaluating nonviolent resistance.",
-      teacherScript: "Pass 3 is Primary Source Mining! Re-read to extract exact quotes proving the impact of nonviolent strategy.",
-      questions: [
-        "Which specific quotes from the document provide the strongest evidence of nonviolent philosophy?",
-        "How does the author connect local civil rights struggles to broader American democratic ideals?",
-        "Using your annotations, write a RACES response answering: Why was nonviolent protest strategically effective?"
-      ]
-    }
-  },
-  {
-    topicId: "topic-ecosystem",
-    topicName: "Ecosystem Disruptions & Food Webs (Inspire Science)",
-    subject: "Science",
-    writingFramework: "CER (Claim, Evidence, Reasoning)",
-    read1: {
-      purpose: "Identify key species, energy flow relationships, and the environmental disturbance introduced.",
-      teacherScript: "Pass 1 is Ecosystem Mapping! As we read, identify: Who eats whom, and what disruption just occurred?",
-      questions: [
-        "What organisms make up this food web, and how does energy flow between producers and consumers?",
-        "What environmental disturbance or human impact is introduced in the passage?",
-        "Which population experiences the most immediate impact when the ecosystem changes?"
-      ]
-    },
-    read2: {
-      purpose: "Analyze cause-and-effect structure, domain terms (apex predator, carrying capacity), and food web diagrams.",
-      teacherScript: "Pass 2 is System Analysis! Re-read paragraph 3 to analyze cause-and-effect connections across trophic levels.",
-      questions: [
-        "How does the term 'carrying capacity' explain the population limit described in paragraph 2?",
-        "How does the food web diagram clarify the cascade effect mentioned in line 12?",
-        "What cause-and-effect signal words connect the removal of a predator to herbivore overpopulation?"
-      ]
-    },
-    read3: {
-      purpose: "Gather population data and line evidence to construct a CER argument on biodiversity preservation.",
-      teacherScript: "Pass 3 is CER Data Mining! Extract exact population figures to prove your claim about ecosystem balance.",
-      questions: [
-        "What data from the text supports the claim that removing an apex predator causes habitat degradation?",
-        "What biological reasoning explains why biodiversity increases ecosystem resilience?",
-        "Write a CER statement predicting the long-term impact if the ecosystem disturbance continues."
-      ]
-    }
-  }
-];
-
-// RACES & CER ACADEMIC WRITING SCAFFOLDS DATASET
+// RACES & CER STRATEGY MATRIX DATASET
 const RACES_CER_FRAMEWORK_DATASET = {
   RACES: [
     {
       letter: "R",
       name: "Restate the Question",
-      description: "Give the title of the passage and restate the question prompt in your own words.",
+      description: "Turn the prompt or question into a declarative statement.",
       prompts: [
-        "In the passage '[Title]', ...",
-        "When considering [Question], ...",
-        "According to the prompt, ..."
+        "In StudySync text [Title], the author...",
+        "Regarding the historical event of [Topic], the primary cause was...",
+        "When examining [Character/Topic], it is evident that..."
       ],
-      exemplar: "In the passage 'The Giver' by Lois Lowry, the protagonist Jonas faces an emotional conflict when..."
+      exemplar: "In StudySync text 'The Giver', the author Lois Lowry conveys that a memory-less society is dangerous..."
     },
     {
       letter: "A",
       name: "Answer the Question",
-      description: "Provide a complete, direct answer statement to all parts of the question.",
+      description: "State your direct claim or answer clearly using academic vocabulary.",
       prompts: [
-        "____ (complete answer statement).",
-        "The primary reason for this choice is ____.",
-        "The author demonstrates this by ____."
+        "...because the removal of emotional depth leads to [Consequence].",
+        "...by demonstrating how [Factor A] directly impacts [Factor B].",
+        "...which shows that [Concept] is essential for..."
       ],
-      exemplar: "Jonas decides to flee the Community because he discovers that 'Release' is actually lethal."
+      exemplar: "...because suppressing human emotion strips individuals of true choice and moral agency."
     },
     {
       letter: "C",
       name: "Cite Text Evidence",
-      description: "Provide exact line numbers or direct quotes from the text to support your answer.",
+      description: "Provide exact line-number quotes or document references to back up your claim.",
       prompts: [
-        "In paragraph [X], the text states, '____'.",
-        "The author wrote, '____'.",
-        "For instance, on line [Y], the author notes, '____'.",
-        "For example, in paragraph [Z], ..."
+        "According to paragraph [X] on page [Y], the text states, '...'",
+        "As stated in Savvas DBQ Document B, '...'",
+        "The author explicitly notes in paragraph [X] that, '...'"
       ],
-      exemplar: "For instance, on line 14 of Chapter 19, the text explicitly states, 'He watched his father inject the newborn infant.'"
+      exemplar: "According to paragraph 4 on page 82, the Elder states, 'Without memory, the pain cannot be managed, yet choice is eliminated.'"
     },
     {
       letter: "E",
-      name: "Explain Evidence",
-      description: "Explain HOW the cited text evidence supports and proves your answer.",
+      name: "Explain the Evidence",
+      description: "Connect the quote back to your claim. Explain HOW and WHY the evidence proves your point.",
       prompts: [
-        "This shows that ____ because ____.",
-        "This tells me that ____.",
-        "I can infer from this evidence that ____.",
-        "Based on this, I can conclude that ____."
+        "This evidence proves that ____ because...",
+        "This quote demonstrates how the author uses [Device] to...",
+        "This detail illustrates that without [Factor], the result is..."
       ],
-      exemplar: "This shows that Jonas could no longer accept the Community's deception because he realized innocent lives were being destroyed."
+      exemplar: "This evidence proves that eliminating choice was a deliberate server-wide trade-off made by the Community Elders to enforce compliance at the expense of human individuality."
     },
     {
       letter: "S",
       name: "Sum It Up",
-      description: "Provide a concluding sentence that restates your main answer and key evidence.",
+      description: "Conclude with a high-level summary statement synthesizing your argument.",
       prompts: [
-        "In conclusion, ____.",
-        "To sum it up, the evidence proves that ____.",
-        "Ultimately, [Restate Answer] because [Summary of Evidence]."
+        "In conclusion, the text clearly illustrates that...",
+        "Ultimately, the evidence confirms that...",
+        "Therefore, one can conclude that..."
       ],
-      exemplar: "In conclusion, Jonas's decision to escape was driven by his moral duty to save Gabriel and restore truth to the Community."
+      exemplar: "Ultimately, Lowry's dystopian setting proves that true freedom requires preserving both the joy and pain of human memory."
     }
   ],
   CER: [
     {
       letter: "C",
-      name: "Claim (Science)",
-      description: "State a direct, testable scientific statement that answers the research question.",
+      name: "Claim",
+      description: "A clear, concise statement answering the scientific question or phenomenon.",
       prompts: [
-        "The claim that [Independent Variable] causes [Dependent Variable] is supported because ____.",
-        "An increase in [Variable X] directly results in ____."
+        "The claim that [Independent Variable] causes [Dependent Variable] is supported because...",
+        "An increase in [Factor A] results in [Factor B] within the ecosystem.",
+        "The chemical reaction between [Substance 1] and [Substance 2] produces..."
       ],
-      exemplar: "Increasing ambient light intensity directly increases the rate of photosynthesis in Elodea plants."
+      exemplar: "Increasing light intensity directly accelerates the rate of photosynthesis in Elodea plants."
     },
     {
       letter: "E",
-      name: "Evidence (Science)",
-      description: "Provide specific empirical lab data, measurements, or text observations.",
+      name: "Evidence",
+      description: "Specific empirical data, measurements, observations, or lab data tables.",
       prompts: [
-        "According to the data table on Page [X], when [X] increased, [Y] changed from [A] to [B].",
-        "The lab experiment demonstrated that at 100W light intensity, oxygen bubble output reached ____."
+        "During the Inspire Science Explore lab, data recorded on Page [X] showed...",
+        "When the light distance decreased from 30cm to 10cm, oxygen bubble production increased from [X] to [Y].",
+        "The lab trial data indicates that..."
       ],
-      exemplar: "The lab data showed that at 100W light intensity, oxygen bubble production rose to 45 bubbles per minute, compared to only 12 bubbles at 25W."
+      exemplar: "In Trial 3, when the lamp was moved to 10cm, oxygen bubble production rose from 12 bubbles/min to 48 bubbles/min."
     },
     {
       letter: "R",
-      name: "Reasoning (Science)",
-      description: "Explain the scientific principles and biological/physical mechanisms explaining WHY the data supports the claim.",
+      name: "Reasoning",
+      description: "The scientific principles and concepts explaining WHY the data supports the claim.",
       prompts: [
-        "Scientific reasoning dictates that [Scientific Law/Mechanism] causes this phenomenon because ____.",
-        "Biologically, this occurs because photons activate chlorophyll molecules within the chloroplasts..."
+        "Scientific reasoning dictates that light energy excites chlorophyll molecules, driving...",
+        "According to biological principles, when [Factor] is abundant, the rate of cellular respiration...",
+        "This occurs because energy transfer within an ecosystem..."
       ],
-      exemplar: "Scientific reasoning dictates that higher light energy excites more chlorophyll pigments inside chloroplasts, accelerating the light-dependent reactions of photosynthesis."
+      exemplar: "Scientific reasoning dictates that photons provide the activation energy required for chloroplasts to split water molecules during light-dependent reactions, yielding higher oxygen gas release."
     }
   ]
 };
 
-// INTERACTIVE ENGAGEMENT GAPS & GAMIFIED SOLUTION GENERATOR DATASET
+// INTERACTIVE ENGAGEMENT GAPS & GAMIFIED SOLUTIONS DATASET
 const ENGAGEMENT_GAPS_GAMIFICATION_DATASET = [
   {
     gapId: "gap-bored",
-    gapTitle: "Kids aren't enjoying reading / They say 'Reading is boring.'",
-    observedBehavior: "Students complain, sigh, or stare blankly at pages without initiating reading. They view text as static homework rather than an active experience.",
-    solutionTitle: "Open-World Quest & Character Stat Build Framing",
-    solutionMechanic: "Re-frame the reading passage as an Open-World Server Map. Treat main characters as Player 1 Avatars with Stat Builds (Strength, Wisdom, Flaws) and Environment Debuffs. Launch new units with cinematic trailer teasers.",
-    teacherScript: "Look at Player 1 Avatar: Jonas from 'The Giver'. What is his main Stat Flaw right now in Chapter 4? What debuff did the Community Server Admin apply to his build? Talk to your Guild Partner in 3... 2... 1...",
+    gapTitle: "1. Kids Are Bored & Disengaged During Reading",
+    observedBehavior: "Students sigh, slump in chairs, stare blankly at pages, or read with zero enthusiasm.",
+    solutionTitle: "Open-World Quest & Reading Guild Mechanics",
+    solutionMechanic: "Re-frame the reading passage as an Open-World Lore Quest. Divide class into 4 Reading Guilds competing for XP by identifying hidden text clues.",
+    teacherScript: "Guild Members, activate your pencils! Paragraph 3 contains a hidden Server Glitch clue. The first Guild to locate line-number evidence earns 100 Guild XP!",
     cardRef: {
-      gameTerm: "Player 1 Avatar & Stat Build",
-      litTerm: "First Read & Character Arc (StudySync ELA)",
-      discussionQuestion: "What is your main character's weakest stat right now in the text, and how is it causing them to take damage?"
+      gameTerm: "Player 1 Avatar & Quest Log",
+      litTerm: "Character Motivation & Setting Lore",
+      discussionQuestion: "What main quest was unlocked for Player 1 in Chapter 2, and what environmental debuff are they facing?"
     },
-    actionableRoutine: "Cinematic Unit Launch: Project a 60-second dramatic audio trailer before reading. Require students to list 2 'Server Admin Rules' governing the story's setting."
+    actionableRoutine: "Guild XP Race: Award points to tables when 100% of partners track text simultaneously."
   },
   {
-    gapId: "gap-questions",
-    gapTitle: "Students show zero interest in answering comprehension questions.",
-    observedBehavior: "Students write 1-word answers or leave question boxes blank because traditional Q&A feels like a tedious interrogation.",
-    solutionTitle: "Boss Battle Encounters & Evidence Loot Drops",
-    solutionMechanic: "Re-frame end-of-section questions as 'Boss Encounters'. Students can only inflict damage on the Boss Question by gathering and equipping textual evidence Loot Cards (exact line numbers).",
-    teacherScript: "Question 4 is today's Mid-Unit Boss Battle! The Boss has 100 HP. To defeat it, your team must equip 2 textual evidence quotes from Paragraph 3. 3... 2... 1... Gear up!",
+    gapId: "gap-apathy",
+    gapTitle: "2. Zero Interest in Answering Questions",
+    observedBehavior: "Students give 1-word answers, say 'I don't know', or refuse to raise hands during discussion.",
+    solutionTitle: "Boss Fight Encounter & Evidence Loot Cards",
+    solutionMechanic: "Frame text-dependent questions as 'Boss Encounters'. Students can only attack the Boss by deploying line-number Evidence Loot Cards.",
+    teacherScript: "Question #3 is a Level 5 Boss Encounter! You cannot attack without 2 line-number Evidence Loot Cards. Partner A, equip your quote!",
     cardRef: {
-      gameTerm: "Act 1 Cutscene to Act 3 Boss Defeat",
-      litTerm: "3-Act Math & Written Comprehension (Savvas / StudySync)",
-      discussionQuestion: "What hidden inventory quote evidence did you unlock in Pass 2 that allowed you to defeat the Boss Question?"
+      gameTerm: "Boss Fight & Evidence Loot",
+      litTerm: "Text-Dependent Claim & Quote Citation",
+      discussionQuestion: "Which quote card deals maximum damage to the author's argument in Paragraph 4?"
     },
-    actionableRoutine: "Evidence Loot Cards: Provide physical green index cards labeled 'Loot Armor'. Students write their line number quote on the card and physically place it on the Boss Question."
+    actionableRoutine: "Evidence Loot Cards: Students write line numbers on mini sticky notes and slap them onto the board."
   },
   {
-    gapId: "gap-at-home",
-    gapTitle: "Students don't read at home or independently.",
-    observedBehavior: "Zero home reading log completion, lack of independent reading stamina, reliance on summary sites (SparkNotes/ChatGPT).",
-    solutionTitle: "Classroom Reading Guilds & XP Streak Leaderboards",
-    solutionMechanic: "Organize students into 4-5 member 'Reading Guilds'. Guilds earn collective XP for consecutive independent reading streaks, line citation challenges, and book reviews.",
-    teacherScript: "Guild 3 just unlocked a 5-day Reading Streak Bonus! They earned +500 Guild XP and a 'Partner Choice Pass' loot reward. Which Guild will challenge them today?",
+    gapId: "gap-nohome",
+    gapTitle: "3. Students Don't Read at Home / Zero Independent Stamina",
+    observedBehavior: "Students never open books outside of class and give up after 2 minutes of quiet reading.",
+    solutionTitle: "AFK XP Streak & Loot Drop Chests",
+    solutionMechanic: "Track daily home reading minutes as 'AFK XP Farming'. Reaching 50 minutes per week unlocks physical Loot Drop cards (e.g., Homework Pass, Partner Pick).",
+    teacherScript: "Log your 10-minute home reading pass in your Loot Log. Every page read outside the server levels up your Guild XP Rank!",
+    cardRef: {
+      gameTerm: "AFK XP Streak & Loot Drop",
+      litTerm: "Independent Reading Stamina",
+      discussionQuestion: "How many XP minutes did your Guild farm this week towards unlocking Friday Loot Drops?"
+    },
+    actionableRoutine: "Loot Drop Fridays: Draw 3 student names weekly who maintained a 4-day reading streak."
+  },
+  {
+    gapId: "gap-giving-up",
+    gapTitle: "4. Giving Up on Complex Text / Immediate Breakdown",
+    observedBehavior: "Students encounter 1 hard word and shut down, saying 'This is too hard.'",
+    solutionTitle: "Syllable Power-Up Chants & Decoding Shields",
+    solutionMechanic: "Use explicit 5-step choral chants to turn multi-syllable vocabulary into a team power-up move.",
+    teacherScript: "Hard word detected! Activate Syllable Power-Up! The word is SYMBIOSIS. What's the word? Sym-bi-o-sis!",
     cardRef: {
       gameTerm: "Language Skill Tree & XP Level Up",
-      litTerm: "Independent Reading & Vocabulary Workshop (NatGeo ELD)",
-      discussionQuestion: "Which new sentence frame or independent reading streak did your Guild unlock today to level up your writing XP?"
+      litTerm: "Domain Vocabulary & Morphology",
+      discussionQuestion: "What prefix power-up did we unlock today to decode 3 new science terms?"
     },
-    actionableRoutine: "Reading Guild XP Board: Display a class wall chart tracking total pages read and quotes cited. Reward top Guilds on Fridays with 'Cardinal Scholar Loot Cards'."
-  },
-  {
-    gapId: "gap-give-up",
-    gapTitle: "Students give up immediately when encountering complex/difficult text.",
-    observedBehavior: "Student shuts book or closes laptop at the first unknown word or dense paragraph, stating 'I don't get it.'",
-    solutionTitle: "Easter Egg Text Hunts & Co-Op Raid Passes",
-    solutionMechanic: "Hide 'Easter Egg Clues' in complex paragraphs (e.g. secret foreshadowing details, author craft tricks). Pair struggling readers in 2-person Co-Op Raid passes where partners split multisyllabic decoding.",
-    teacherScript: "Paragraph 4 contains a hidden Easter Egg clue left by the author! The first Guild to discover line 14's hidden metaphor unlocks +200 Raid XP. Detective eyes on line 1!",
-    cardRef: {
-      gameTerm: "Mystery Map Event & Environment Glitch",
-      litTerm: "Anchor Phenomenon & Complex Text Deep-Dive (Inspire Science)",
-      discussionQuestion: "What scientific anomaly or hidden text clue did your Co-Op pair discover in Paragraph 4, and how did you patch it?"
-    },
-    actionableRoutine: "Co-Op Raid Pass: Partner A reads odd-numbered lines; Partner B reads even-numbered lines. When a tricky word appears, both partners perform the 'Cover the Prefix/Suffix' decoding routine."
+    actionableRoutine: "60-Second Syllable Clap: Break down 2 complex words before starting any reading pass."
   },
   {
     gapId: "gap-passive",
-    gapTitle: "Students read passively without tracking or annotating.",
-    observedBehavior: "Eyes wander, fingers off text, zero marginal notes written, highlights applied randomly like yellow coloring books.",
-    solutionTitle: "Tactile Track Pass & Margin Audit Stamps",
-    solutionMechanic: "Enforce physical pencil/eraser tracking on line 1. Require the 4-Symbol Annotation Key (★ Claim, ? Question, ◯ Vocabulary, → Evidence) paired with mandatory 2-word margin notes.",
-    teacherScript: "Pencils in hand. No text highlight without a written margin note! Any naked highlight without words receives zero loot XP. Show me your tracks!",
+    gapTitle: "5. Passive Reading / Fake-Reading (Mouths Closed, Eyes Wandering)",
+    observedBehavior: "Students pretend to look at pages but don't track words or move pencils.",
+    solutionTitle: "Tactile Eraser Tracking & Margin Audits",
+    solutionMechanic: "Enforce physical eraser-tracking on line numbers paired with 2-minute partner margin audits.",
+    teacherScript: "Erasers down on line 4! Slide your eraser under every word as we read chorally. Audit in 3 minutes!",
     cardRef: {
-      gameTerm: "Historical Faction Wars & Lore Records",
-      litTerm: "Primary Source DBQ Annotation & HIPP Analysis (Savvas History)",
-      discussionQuestion: "If Document A was written by Faction Admin X, what bias or margin note did you write to mark their historical narrative?"
+      gameTerm: "Tactile Tracking & Margin Audit",
+      litTerm: "Active Text Tracking & Metacognition",
+      discussionQuestion: "Did your partner leave visible margin tracks on paragraph 2?"
     },
-    actionableRoutine: "Desk-Swapping Margin Audit: 2-minute timer where partners swap papers to verify that every underline has a written marginal explanation."
-  },
-  {
-    gapId: "gap-isolated",
-    gapTitle: "Students view reading as an isolated, quiet punishment.",
-    observedBehavior: "Students dread silent reading time because it feels lonely, punitive, and disconnected from peer interaction.",
-    solutionTitle: "Turn-Talk-Write Loop, Friday Loot Drops & Public Celebrations",
-    solutionMechanic: "Transform reading into a highly social, structured loop (Talk -> Write -> Talk Again). Celebrate student evidence wins publicly with Friday Loot Drops and Hall of Fame Badges.",
-    teacherScript: "Partner A, you have 60 seconds to speak your claim using Stem #1. Partner B, your eyes are on Partner A. Swap and talk in 3... 2... 1... Talk!",
-    cardRef: {
-      gameTerm: "Player 1 Avatar & Stat Build",
-      litTerm: "Oral Discourse & Peer Critique (Tulsa Way AO2 / TLE Dim 9)",
-      discussionQuestion: "How did your partner's verbal claim help you refine your own written Loot Log entry?"
-    },
-    actionableRoutine: "Friday Loot Drops: Every Friday, draw 3 Cardinal Scholar Loot Cards from the mastery box. Recipients earn public badges and privilege passes."
+    actionableRoutine: "Partner Margin Audit: Swapping work to stamp verified text annotations."
   }
 ];
 
-// MIDDLE SCHOOL STRUGGLING READER PROMPTING GUIDE (GRADES 6-8 LEXILE BANDS)
+// MIDDLE SCHOOL STRUGGLING READER PROMPTING DATASET (GRADES 6-8)
 const STRUGGLING_READER_PROMPTING_DATASET = [
   {
     lexileBand: "400L – 650L",
-    gradeLevel: "Middle School Intensive Intervention (Below Grade Level)",
-    focusArea: "Multisyllable Decoding, Sentence Boundary Fluency & Literal Understanding",
+    gradeLevel: "Grade 6 Support / Tier 3 Intensive",
+    focusArea: "Decoding Multi-Syllabic Words & Basic Sentence Syntax",
     items: [
       {
-        element: "Multisyllabic Word Breakdown",
-        studentError: "Stumbles or collapses when encountering 3+ syllable academic words (e.g., photosynthesis, constitution, jurisdiction).",
+        element: "Multi-Syllabic Word Breakdown",
+        studentError: "Student stops at 3-syllable words (e.g., 'photosynthesis', 'constitutional') or guesses based on first 2 letters.",
         prompts: [
-          "Cover the prefix and suffix. What is the root word?",
-          "Break the word into chunks at the vowels. Say chunk 1... chunk 2... now put them together.",
-          "Do you recognize a base word you already know inside this big word?"
+          "Cover the ending of the word. What is the root word?",
+          "Let's scoop the word into syllables together: Photo - syn - the - sis. Now read it smoothly.",
+          "What prefix do you see at the start? What does that prefix mean?"
         ]
       },
       {
-        element: "Sentence Boundary & Punctuation Fluency",
-        studentError: "Reads straight through periods, semicolons, and em-dashes without pausing, losing sentence meaning.",
+        element: "Sentence Tracking & Punctuation Pauses",
+        studentError: "Student reads straight through periods and commas without pausing, losing sentence meaning.",
         prompts: [
-          "Stop at the period! What complete thought did that sentence just tell us?",
-          "Try it again, but make your voice pause at the comma like you're talking to a friend.",
-          "Did your voice go up at the question mark?"
-        ]
-      },
-      {
-        element: "Literal Surface-Level Recall Gap",
-        studentError: "Gives up or copies verbatim fragments when asked a baseline comprehension question.",
-        prompts: [
-          "Re-read lines 4-6. Who is involved in this action?",
-          "Point to the sentence that tells us WHERE this happened.",
-          "What happened first before the character made that choice?"
-        ]
-      },
-      {
-        element: "Vocabulary Overload Shutdown",
-        studentError: "Stops reading completely when encountering 2+ unknown Tier 2 words in a single sentence.",
-        prompts: [
-          "Skip the tricky word for a second and read to the end of the sentence. What word would make sense there?",
-          "Look at the sentence right after. Does it give a definition or clue?",
-          "Is there a synonym or picture context clue nearby?"
+          "Put your pencil on the stop sign (period). Take a breath before reading sentence 2.",
+          "Read to the comma, pause for 1 second, then finish the idea.",
+          "Who or what was that sentence about? Tell me in 3 words."
         ]
       }
     ]
   },
   {
     lexileBand: "650L – 850L",
-    gradeLevel: "Grade 6 Standard / Developing Middle School Reader",
-    focusArea: "Structural Text Features, Paragraph Connections & Text Evidence",
+    gradeLevel: "Grade 6-7 On-Level / Tier 2 Targeted",
+    focusArea: "Vocabulary Context Clues & Main Idea Gist Summaries",
     items: [
       {
-        element: "Text Feature & Graphic Bypass",
-        studentError: "Skips over subheaders, bold terms, diagrams, maps, and captions, missing essential context.",
+        element: "Domain Vocabulary Context Clues",
+        studentError: "Student skips unfamiliar Tier 2/3 vocabulary words without attempting to deduce meaning.",
         prompts: [
-          "Why did the author or publisher put this word in bold / put this diagram on the side?",
-          "Read the caption under the picture. How does it add to what paragraph 2 says?",
-          "Look at the section subheader. What prediction can you make about this chunk?"
+          "Read the sentence before and after that word. What clues tell us what it means?",
+          "Is this word positive, negative, or neutral in this paragraph?",
+          "Can you substitute a word you know that makes sense in this spot?"
         ]
       },
       {
-        element: "Paragraph Connection Disconnect",
-        studentError: "Reads Paragraph 1 and Paragraph 2 as isolated facts without connecting cause-and-effect or claim-to-evidence.",
+        element: "Paragraph Gist Summarization",
+        studentError: "Student reads an entire paragraph but cannot state the main idea when prompted.",
         prompts: [
-          "How does Paragraph 2 build on the idea introduced in Paragraph 1?",
-          "What transition word connects these two paragraphs (e.g., However, Consequently, In addition)?",
-          "What changed between the beginning of this section and the end?"
-        ]
-      },
-      {
-        element: "Inference vs. Literal Evidence Gap",
-        studentError: "Can state WHAT happened, but cannot explain WHY the author included a specific detail or quote.",
-        prompts: [
-          "The text doesn't state it directly—what clues on lines 12-15 tell us why the character made that decision?",
-          "What can we infer about the author's stance based on their word choice here?",
-          "What evidence on line [X] directly proves your answer?"
-        ]
-      },
-      {
-        element: "Pronoun & Reference Disconnect",
-        studentError: "Loses track of who 'he/she/they/this/it' refers to across complex sentences.",
-        prompts: [
-          "Who or what does the word 'this' refer to in line 18?",
-          "Go back to the previous sentence—who is 'they' talking about?",
-          "Replace the pronoun with the actual noun. Does the sentence make sense now?"
+          "In 5 words or fewer, what was paragraph 3 mostly about?",
+          "Look at the first and last sentence of this paragraph. What key topic do they share?",
+          "What picture or mental image did you form while reading line 12?"
         ]
       }
     ]
   },
   {
-    lexileBand: "850L – 1000L",
-    gradeLevel: "Grade 7 Standard / Expanding Middle School Reader",
-    focusArea: "Author Craft, Tone Shifts, Figurative Language & Complex Syntax",
+    lexileBand: "850L – 1050L",
+    gradeLevel: "Grade 7-8 On-Level / Complex Text Scaffolding",
+    focusArea: "Author Craft, Figurative Language & Structural Shifts",
     items: [
       {
-        element: "Figurative Language & Sarcasm Confusion",
-        studentError: "Takes idioms, metaphors, hyperbole, or author sarcasm literally.",
+        element: "Author Tone & Word Choice Analysis",
+        studentError: "Student understands literal plot events but misses underlying tone shifts or author bias.",
         prompts: [
-          "Is the author speaking literally here, or using a metaphor? What two things are being compared?",
-          "Does the character really mean what they said, or are they being sarcastic/ironic?",
-          "Why did the author use this figure of speech instead of plain words?"
+          "Why did the author use the word '[Word]' instead of '[Common Synonym]'?",
+          "What feeling or mood is created by the description in paragraph 4?",
+          "Does the author agree or disagree with the argument in this section? How do you know?"
         ]
       },
       {
-        element: "Author Tone & Stance Shifts",
-        studentError: "Misses shifts in author stance (e.g., transitioning from neutral description to critical argument).",
+        element: "Text Structure & Transition Markers",
+        studentError: "Student misses cause-and-effect or compare-and-contrast relationship markers.",
         prompts: [
-          "Where does the author's tone change from neutral explanation to persuasive argument?",
-          "What emotionally charged words indicate the author's bias here?",
-          "Is the author favoring Side A or Side B in this paragraph?"
-        ]
-      },
-      {
-        element: "Claim vs. Counterclaim Confusion",
-        studentError: "Conflates the author's central claim with an opponent's counterargument being refuted.",
-        prompts: [
-          "Is this statement the author's belief, or are they quoting an opponent to disprove them?",
-          "Look for signal words like 'Critics argue...' or 'On the other hand...'. Who holds this view?",
-          "What argument is the author trying to knock down in paragraph 4?"
-        ]
-      },
-      {
-        element: "Complex Clause Syntax Overload",
-        studentError: "Gets lost in long compound-complex sentences with multiple dependent clauses.",
-        prompts: [
-          "Find the main subject and main verb in this long sentence. What is the core action?",
-          "Cross out the clause inside the commas for a second. Read the main sentence without it.",
-          "What extra detail does the dependent clause add?"
+          "Highlight the transition word in line 8 ('However', 'Consequently'). What does that word signal?",
+          "Is the author comparing two things here or showing cause and effect?",
+          "How does paragraph 4 build on the problem introduced in paragraph 2?"
         ]
       }
     ]
   },
   {
-    lexileBand: "1000L – 1200L+",
-    gradeLevel: "Grade 8 Standard / Advanced Stretch Reader",
-    focusArea: "Cross-Text Synthesis, Rhetorical Analysis & Source Reliability",
+    lexileBand: "1050L – 1200L+",
+    gradeLevel: "Grade 8 Advanced / High-Rigor DBQ & Scientific Analysis",
+    focusArea: "Evidence Synthesis, Argumentation & RACES/CER Writing",
     items: [
       {
-        element: "Cross-Text Synthesis Gap",
-        studentError: "Summarizes Source A and Source B separately, but struggles to synthesize conflicting points into a unified thesis.",
+        element: "Quote Evidence Selection & Line Citation",
+        studentError: "Student selects weak or irrelevant quotes that do not directly support their claim.",
         prompts: [
-          "How does Document A's perspective challenge or support Document B's argument?",
-          "Where do the two authors agree, and where do their conclusions diverge?",
-          "What underlying assumptions do both authors share?"
+          "Which exact line number contains the STRONGEST proof for your claim?",
+          "Does this quote directly explain WHY your answer is correct, or just state a fact?",
+          "If an opponent argued against you, which line would disprove their point?"
         ]
       },
       {
-        element: "Source Reliability & Bias Blindness",
-        studentError: "Accepts author claims uncritically without evaluating evidence quality or motive.",
+        element: "Evidence Elaboration (RACES 'E' / CER 'R')",
+        studentError: "Student drops a quote into writing without explaining HOW it connects to their claim.",
         prompts: [
-          "What bias might this author have based on their background, role, or publication date?",
-          "Did the author provide empirical data to support this claim, or just personal opinion?",
-          "What evidence did the author omit that might challenge their perspective?"
-        ]
-      },
-      {
-        element: "Rhetorical Device Analysis",
-        studentError: "Overlooks how ethos/pathos/logos, rhetorical questions, or word choice manipulate reader emotion.",
-        prompts: [
-          "Why did the author choose the word [X] instead of [Y]? How does that choice shape reader emotion?",
-          "Is the author appealing to logic (data), emotion (stories), or authority (ethos) here?",
-          "What response is the author trying to provoke with this rhetorical question?"
+          "Now complete this stem: 'This quote proves my claim because...'",
+          "Explain the scientific principle or historical reason connecting line 14 to your claim.",
+          "Why is this specific evidence essential to proving your thesis?"
         ]
       }
+    ]
+  }
+];
+
+// TEACHER SPANISH CLASSROOM PHRASE KIT FOR MULTILINGUAL LEARNERS
+const SPANISH_TEACHER_PHRASES_DATASET = [
+  {
+    category: "Daily Classroom Routines & Tracking (Rutinas Diarias y Seguimiento)",
+    icon: "📖",
+    phrases: [
+      { es: "Abran su libro en la página [X], por favor.", en: "Open your book to page [X], please." },
+      { es: "Pon tu lápiz / borrador en la primera línea.", en: "Put your pencil / eraser on line 1." },
+      { es: "Sigue la lectura con tu dedo o borrador.", en: "Track the reading with your finger or eraser." },
+      { es: "Lee conmigo en voz alta.", en: "Read aloud with me in unison." },
+      { es: "No te preocupes, vamos a intentar juntos.", en: "Don't worry, we will try together." }
+    ]
+  },
+  {
+    category: "Turn & Talk & Partner Discussion (Trabajo en Parejas y Diálogo)",
+    icon: "🗣️",
+    phrases: [
+      { es: "Primero habla con tu compañero en español.", en: "First speak with your partner in Spanish." },
+      { es: "Explícale tu idea a tu compañero.", en: "Explain your idea to your partner." },
+      { es: "Usa esta oración modelo en la pantalla.", en: "Use this sentence frame on the screen." },
+      { es: "¿Cuál es tu respuesta o opinión?", en: "What is your answer or opinion?" },
+      { es: "¡Buen trabajo! Excelente idea.", en: "Great work! Excellent idea." }
+    ]
+  },
+  {
+    category: "Text Annotation & Evidence (Anotación y Evidencia del Texto)",
+    icon: "✏️",
+    phrases: [
+      { es: "Encierra en un círculo la palabra clave.", en: "Circle the key word." },
+      { es: "Escribe una pequeña nota en el margen.", en: "Write a short note in the margin." },
+      { es: "Busca el número de línea que prueba tu respuesta.", en: "Find the line number that proves your answer." },
+      { es: "Subraya la evidencia en el texto.", en: "Underline the evidence in the text." }
+    ]
+  },
+  {
+    category: "Encouragement & Mindset (Ánimo y Confianza)",
+    icon: "🌟",
+    phrases: [
+      { es: "Tu voz y tus ideas son muy importantes aquí.", en: "Your voice and ideas matter here." },
+      { es: "Estás mejorando mucho cada día.", en: "You are improving so much every day." },
+      { es: "Pide ayuda cuando la necesites, estoy aquí para ayudarte.", en: "Ask for help whenever you need it, I'm here for you." },
+      { es: "¡Excelente esfuerzo! ¡Sigue así!", en: "Excellent effort! Keep it up!" }
     ]
   }
 ];
@@ -1274,7 +1108,7 @@ const GAMIFIED_LITERACY_PRACTICES_DATASET = {
   ]
 };
 
-// Tulsa Way Rubric Performance Areas Dataset (June 2025)
+// Tulsa Way Rubric Performance Areas Dataset
 const TULSA_WAY_DATASET = [
   {
     area: "Culture of Learning",
