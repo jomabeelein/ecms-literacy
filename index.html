@@ -3,553 +3,267 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ECMS Literacy Mantras Toolkit | School Logo & Printable Studio Edition</title>
-  <meta name="description" content="Robust interactive toolkit for implementing the 8 ECMS Literacy Mantras across StudySync, Inspire Science, Savvas, and National Geographic ELD with high-impact print studio resources.">
-
-  <!-- Google Fonts -->
+  <title>ECMS Literacy Mantras Toolkit | Middle School Edition</title>
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Main Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="app-container">
-    <!-- Sidebar Navigation -->
+    
+    <!-- SIDEBAR NAVIGATION -->
     <aside class="sidebar">
       <div class="sidebar-header">
-        <!-- Official EC Cardinal Head Logo -->
-        <div style="width: 44px; height: 44px; flex-shrink: 0;">
-          <svg viewBox="0 0 100 100" width="100%" height="100%">
-            <path d="M15 25 C30 15 70 30 90 60 C75 62 65 78 58 80 C48 70 38 60 25 50 Z" fill="#AB3633"/>
-            <path d="M45 40 C55 35 75 48 80 60 C70 65 60 75 58 80 C48 72 40 55 45 40 Z" fill="#8B2C28"/>
-            <polygon points="68,52 82,60 68,66" fill="#F59E0B" stroke="#2B1F20" stroke-width="2"/>
-            <path d="M52 42 C62 42 70 50 68 62 C58 64 50 55 52 42 Z" fill="#2B1F20"/>
-            <ellipse cx="60" cy="50" rx="3" ry="5" fill="#FFFFFF"/>
-            <circle cx="60" cy="50" r="2" fill="#2B1F20"/>
-          </svg>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="38" height="38">
+          <path d="M15 45 C10 25 35 10 75 15 C85 30 80 50 65 60 L68 90 L50 75 C30 80 15 65 15 45 Z" fill="#AB3633"/>
+          <path d="M25 45 C20 30 40 18 70 22 C60 45 45 60 25 45 Z" fill="#8B2C28"/>
+          <polygon points="75,25 98,35 75,45" fill="#F59E0B"/>
+          <path d="M60 25 Q70 30 65 42 Q50 40 60 25 Z" fill="#2B1F20"/>
+          <circle cx="55" cy="30" r="4" fill="#FFFFFF"/>
+        </svg>
         <div>
-          <h1 class="brand-title">Literacy Mantras</h1>
-          <span class="brand-subtitle">ECMS Cardinals Hub</span>
+          <h1 class="brand-title">ECMS Literacy</h1>
+          <p class="brand-subtitle">Mantras Toolkit</p>
         </div>
       </div>
 
       <nav class="sidebar-nav">
-        <button class="nav-btn active" data-tab="hub">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span>Mantra Hub</span>
+        <button class="nav-btn active" data-view="view-mantras-hub">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+          <span>8 Mantras Hub</span>
         </button>
 
-        <button class="nav-btn" data-tab="teacher-bank">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          <span>Teacher Strategy Bank</span>
+        <button class="nav-btn" data-view="view-strategy-bank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          <span>Strategy Bank</span>
         </button>
 
-        <button class="nav-btn" data-tab="leader-guide">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
-          <span>Leader Walkthroughs</span>
+        <button class="nav-btn" data-view="view-leader-guide">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <span>Leader & Rubrics</span>
         </button>
 
-        <button class="nav-btn" data-tab="generators">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <button class="nav-btn" data-view="view-generators">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
           <span>Strategy Generators</span>
         </button>
 
-        <button class="nav-btn" data-tab="printable-studio">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        <button class="nav-btn" data-view="view-printable-studio">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
           <span>Printable Studio</span>
-        </button>
-
-        <button class="nav-btn" data-tab="pd-presenter">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <span>PD Presentation Deck</span>
         </button>
       </nav>
 
       <div class="sidebar-footer">
-        <button class="theme-toggle-btn" id="theme-toggle">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-          <span>Light Mode</span>
+        <button id="theme-toggle" class="theme-toggle-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          <span>Dark Mode</span>
         </button>
       </div>
     </aside>
 
-    <!-- Main Content Area -->
-    <main class="main-wrapper">
-      <!-- Top Sticky Header -->
+    <!-- MAIN CONTENT WRAPPER -->
+    <div class="main-wrapper">
+      
+      <!-- TOP HEADER BAR -->
       <header class="top-bar">
-        <div class="top-bar-title" id="page-title">
-          <span>8 Literacy Mantras Toolkit</span>
-        </div>
+        <h2 id="page-title" class="top-bar-title">
+          <span>ECMS 8 Literacy Mantras Hub</span>
+        </h2>
         <div class="quick-actions">
-          <button class="btn btn-outline" id="btn-quick-walkthrough">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Start Walkthrough
-          </button>
-          <button class="btn btn-primary" id="btn-launch-pd">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            Launch PD Slides
+          <button class="btn btn-secondary" onclick="app.navigateTo('view-printable-studio')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+            Print Posters & Desk Cards
           </button>
         </div>
       </header>
 
-      <!-- View Container -->
-      <div class="content-body">
+      <!-- CONTENT BODY -->
+      <main class="content-body">
         
-        <!-- 1. MANTRA HUB VIEW -->
-        <section id="view-hub" class="tab-view active">
+        <!-- VIEW 1: MANTRAS HUB -->
+        <section id="view-mantras-hub" class="tab-view active">
           <div class="hero-banner">
-            <span class="hero-badge">ECMS Instructional Framework</span>
-            <h2 class="hero-title">The 8 Literacy Mantras Toolkit</h2>
+            <span class="hero-badge">East Central Middle School (Grades 6-8)</span>
+            <h1 class="hero-title">ECMS Literacy Mantras Toolkit</h1>
             <p class="hero-description">
-              Aligned with <strong>StudySync</strong> (ELA), <strong>Inspire Science</strong> (Science), <strong>Savvas</strong> (Social Studies & Math), and <strong>National Geographic</strong> (ELD). Access high-leverage launch scripts, timed protocols, and WIDA Level scaffolds.
+              Transforming instructional culture for middle schoolers. Aligned with StudySync (ELA), Inspire Science, Savvas (Social Studies & Math), National Geographic (ELD), the <strong>Tulsa Way Rubric for Teacher Growth</strong>, and <strong>Tulsa Model TLE Rubric</strong>.
             </p>
           </div>
 
-          <!-- Filter & Search Controls -->
-          <div class="generator-card" style="padding: 20px; margin-bottom: 28px;">
-            <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
-              <div style="flex: 1; min-width: 250px;">
-                <input type="text" id="mantra-search" class="form-control" placeholder="🔍 Search mantras by keyword, strategy, or curriculum term...">
-              </div>
-              <div style="width: 240px;">
-                <select id="filter-subject" class="form-select">
-                  <option value="all">All Content Areas</option>
-                  <option value="ELA">ELA (StudySync)</option>
-                  <option value="Science">Science (Inspire Science)</option>
-                  <option value="SocialStudies">Social Studies (Savvas)</option>
-                  <option value="Math">Math (Savvas EnVision)</option>
-                  <option value="ELD">ELD (NatGeo Reach/Edge)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mantras Grid -->
-          <div class="mantra-grid" id="mantras-grid">
-            <!-- Dynamically Rendered Cards -->
+          <div class="mantra-grid" id="mantra-cards-container">
+            <!-- Rendered dynamically by app.js -->
           </div>
         </section>
 
-        <!-- 2. TEACHER STRATEGY BANK VIEW -->
-        <section id="view-teacher-bank" class="tab-view">
-          <div class="hero-banner" style="background: linear-gradient(135deg, #8B2C28 0%, #AB3633 100%);">
-            <span class="hero-badge">Curriculum-Aligned Strategy Bank</span>
-            <h2 class="hero-title">Teacher Strategy Bank</h2>
+        <!-- VIEW 2: STRATEGY BANK (FOCUSED ON CONTENT AREAS, STRUGGLING READER GUIDE, MLL SUPPORT) -->
+        <section id="view-strategy-bank" class="tab-view">
+          <div class="hero-banner">
+            <span class="hero-badge">Middle School Subject Playbooks</span>
+            <h1 class="hero-title">Content Strategy Bank</h1>
             <p class="hero-description">
-              Actionable classroom routines, clear subject exemplars, timed protocols, and WIDA Level ELD scaffolds embedded in your daily curriculum.
+              Filter verbatim scripts, timed protocols, ELD WIDA scaffolds, misconception fixes, and subject-specific teacher playbooks.
             </p>
           </div>
 
-          <div id="teacher-bank-container" style="display: flex; flex-direction: column; gap: 32px;">
-            <!-- Dynamically Rendered Deep Dive Cards -->
+          <div class="nav-tabs">
+            <button class="tab-link active" data-subtab="bank-all">All Mantras</button>
+            <button class="tab-link" data-subtab="bank-ela">StudySync ELA</button>
+            <button class="tab-link" data-subtab="bank-science">Inspire Science</button>
+            <button class="tab-link" data-subtab="bank-ss">Savvas Social Studies</button>
+            <button class="tab-link" data-subtab="bank-math">Savvas Math</button>
+            <button class="tab-link" data-subtab="bank-eld">NatGeo ELD</button>
+            <button class="tab-link" data-subtab="bank-struggling">Struggling Reader Guide (MS)</button>
+            <button class="tab-link" data-subtab="bank-mll">Non-English Speakers (MLL/SLIFE)</button>
+          </div>
+
+          <div id="strategy-bank-content">
+            <!-- Rendered dynamically by app.js -->
           </div>
         </section>
 
-        <!-- 3. LEADER WALKTHROUGH & COACHING VIEW -->
+        <!-- VIEW 3: LEADER ALIGNMENT & RUBRICS (INCLUDES PD SLIDES LAUNCH) -->
         <section id="view-leader-guide" class="tab-view">
-          <div class="hero-banner" style="background: linear-gradient(135deg, #2B1F20 0%, #473536 100%);">
-            <span class="hero-badge">Instructional Leadership & Walkthroughs</span>
-            <h2 class="hero-title">Leader Coaching & Observation Guide</h2>
-            <p class="hero-description">
-              Conduct effective walkthroughs evaluating teacher launch phrasing, student physical tracking, and curriculum implementation.
-            </p>
-          </div>
-
-          <div class="nav-tabs">
-            <button class="tab-link active" data-subtab="look-fors">Look-Fors Master Grid</button>
-            <button class="tab-link" data-subtab="live-form">Live Walkthrough Observation Form</button>
-            <button class="tab-link" data-subtab="coaching-bank">Coaching Question Bank</button>
-          </div>
-
-          <div id="subtab-look-fors" class="subtab-content active">
-            <div id="leader-lookfors-container" class="mantra-grid">
-              <!-- Dynamically Rendered Look-For Cards -->
+          <div class="hero-banner" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+            <div>
+              <span class="hero-badge">Observation & Leadership Alignment</span>
+              <h1 class="hero-title">Tulsa Way & TLE Rubric Crosswalk</h1>
+              <p class="hero-description">
+                Map the 8 Literacy Mantras directly to the 4 Performance Areas of the Tulsa Way Rubric (June 2025) and the 20 Dimensions of the Tulsa Model TLE Rubric.
+              </p>
+            </div>
+            <div>
+              <button class="btn btn-primary" onclick="app.launchPdSlides()" style="padding:14px 24px; font-size:1.05rem; box-shadow:0 6px 20px rgba(171, 54, 51, 0.4);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>Launch PD Presentation Deck</span>
+              </button>
             </div>
           </div>
 
-          <div id="subtab-live-form" class="subtab-content" style="display: none;">
-            <div class="generator-card">
-              <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--cardinal-red); margin-bottom: 20px;">
-                Conduct Live Classroom Walkthrough
-              </h3>
-              <form id="observation-form" class="observation-form">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
-                  <div>
-                    <label class="form-label">Teacher Name</label>
-                    <input type="text" id="obs-teacher" class="form-control" placeholder="e.g., Ms. Johnson" required>
-                  </div>
-                  <div>
-                    <label class="form-label">Grade / Subject / Curriculum Unit</label>
-                    <input type="text" id="obs-subject" class="form-control" placeholder="e.g., 7th Grade StudySync ELA - Unit 2" required>
-                  </div>
-                  <div>
-                    <label class="form-label">Observer Name</label>
-                    <input type="text" id="obs-observer" class="form-control" placeholder="e.g., Principal Smith" required>
-                  </div>
-                </div>
-
-                <div>
-                  <label class="form-label" style="margin-top: 12px;">Select Literacy Mantras Verified in Action</label>
-                  <div class="checkbox-group" id="obs-mantras-checkboxes">
-                    <!-- Checkboxes generated dynamically -->
-                  </div>
-                </div>
-
-                <div>
-                  <label class="form-label">Classroom Glows (Strong Evidence Observed)</label>
-                  <textarea id="obs-glows" class="form-control" rows="3" placeholder="Describe specific positive teacher launch phrasing & active student tracking witnessed..."></textarea>
-                </div>
-
-                <div>
-                  <label class="form-label">Actionable Coaching Recommendation (Grow)</label>
-                  <textarea id="obs-grows" class="form-control" rows="3" placeholder="Provide 1 high-leverage coaching recommendation..."></textarea>
-                </div>
-
-                <div style="display: flex; gap: 12px; margin-top: 10px;">
-                  <button type="button" class="btn btn-primary" id="btn-generate-obs-report">Generate Coaching Report</button>
-                  <button type="reset" class="btn btn-secondary">Reset Form</button>
-                </div>
-              </form>
-
-              <div id="obs-report-output" class="result-box" style="display: none; margin-top: 28px;">
-                <!-- Generated Summary Report -->
-              </div>
-            </div>
+          <!-- Tulsa Way 4 Performance Areas Cards -->
+          <h2 style="font-family:var(--font-heading); margin-bottom:20px; color:var(--text-primary);">Tulsa Way Rubric Framework (June 2025)</h2>
+          <div class="mantra-grid" style="margin-bottom:40px;" id="tulsa-way-areas-container">
+            <!-- Rendered dynamically -->
           </div>
 
-          <div id="subtab-coaching-bank" class="subtab-content" style="display: none;">
-            <div id="coaching-questions-container" style="display: flex; flex-direction: column; gap: 16px;">
-              <!-- Dynamically Rendered Questions -->
-            </div>
+          <!-- Master Alignment Crosswalk Table -->
+          <h2 style="font-family:var(--font-heading); margin-bottom:20px; color:var(--text-primary);">Master Crosswalk Matrix (Tulsa Way & TLE Rubric)</h2>
+          <div style="overflow-x:auto; margin-bottom:40px;">
+            <table class="crosswalk-table">
+              <thead>
+                <tr>
+                  <th>Mantra # & Title</th>
+                  <th>Tulsa Way Area & Descriptor</th>
+                  <th>Tulsa Model TLE Dimension</th>
+                  <th>Observation Look-Fors</th>
+                </tr>
+              </thead>
+              <tbody id="crosswalk-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- TLE 20 Dimensions Grid -->
+          <h2 style="font-family:var(--font-heading); margin-bottom:20px; color:var(--text-primary);">Tulsa Model TLE Rubric (20 Dimensions Alignment)</h2>
+          <div class="mantra-grid" id="tle-dimensions-container">
+            <!-- Rendered dynamically -->
           </div>
         </section>
 
-        <!-- 4. INTERACTIVE STRATEGY GENERATORS VIEW -->
+        <!-- VIEW 4: STRATEGY GENERATORS SUITE (INCLUDES INTERACTIVE ENGAGEMENT GAP & GAMIFICATION GENERATOR) -->
         <section id="view-generators" class="tab-view">
-          <div class="hero-banner" style="background: linear-gradient(135deg, #AB3633 0%, #2B1F20 100%);">
-            <span class="hero-badge">Educator Tool Suite</span>
-            <h2 class="hero-title">Literacy Strategy Generators</h2>
+          <div class="hero-banner">
+            <span class="hero-badge">Interactive Planning Tools</span>
+            <h1 class="hero-title">Strategy Generators Suite</h1>
             <p class="hero-description">
-              Generate practical teacher launch scripts, academic sentence stems, video game discussion cards, vocabulary scripts, and gap diagnostics.
+              Build custom sentence stems, construct close reading passes, diagnose student engagement gaps with gamified reading solutions, and access the Middle School Struggling Reader Guide!
             </p>
           </div>
 
           <div class="nav-tabs">
-            <button class="tab-link active" data-gentab="verbatim-script">⚡ Lesson Routine & Script Generator</button>
-            <button class="tab-link" data-gentab="stems">Mantra 4: Stem Builder</button>
-            <button class="tab-link" data-gentab="videogame">Mantra 7: Video Game Lit Cards</button>
-            <button class="tab-link" data-gentab="vocab">Mantra 6: Choral Vocab Script Maker</button>
-            <button class="tab-link" data-gentab="closeread">Mantra 5: Multi-Pass Reader</button>
-            <button class="tab-link" data-gentab="gaps">Mantra 8: Gap Matrix</button>
+            <button class="tab-link active" data-gentab="gen-stems">Sentence Stem Builder</button>
+            <button class="tab-link" data-gentab="gen-close-read">Close Reading Pass Builder</button>
+            <button class="tab-link" data-gentab="gen-engagement-game">🎮 Engagement Gap & Gamification Generator</button>
+            <button class="tab-link" data-gentab="gen-struggling-prompts">Struggling Reader Prompting Guide (MS)</button>
           </div>
 
-          <!-- LESSON SCRIPT GENERATOR -->
-          <div id="gentab-verbatim-script" class="gentab-content active">
-            <div class="generator-card">
-              <h3 style="color: var(--cardinal-red); font-family: var(--font-heading); margin-bottom: 8px;">⚡ Lesson Routine & Script Generator</h3>
-              <p style="color: var(--text-secondary); margin-bottom: 20px;">Generate a practical teacher launch script, timed student protocol, and WIDA Level ELD scaffold for your upcoming lesson plan.</p>
-
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px;">
-                <div>
-                  <label class="form-label">Select Literacy Mantra</label>
-                  <select id="vscript-mantra" class="form-select">
-                    <option value="1">Mantra 1: If there's a text to read, we all will read it</option>
-                    <option value="2">Mantra 2: Talk, then write, then talk again</option>
-                    <option value="3">Mantra 3: Thinking leaves tracks</option>
-                    <option value="4">Mantra 4: Give the stem to move the pen</option>
-                    <option value="5">Mantra 5: Read it. Read it again. Read it differently.</option>
-                    <option value="6">Mantra 6: The word is... (What's the word?)</option>
-                    <option value="7">Mantra 7: Talk about books like they are video games</option>
-                    <option value="8">Mantra 8: Look at the work. Find the gaps.</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="form-label">Adopted Curriculum</label>
-                  <select id="vscript-curriculum" class="form-select">
-                    <option value="ELA">StudySync (McGraw-Hill ELA)</option>
-                    <option value="Science">Inspire Science (McGraw-Hill)</option>
-                    <option value="SocialStudies">Savvas Social Studies (myWorld DBQ)</option>
-                    <option value="Math">Savvas EnVision Math</option>
-                    <option value="ELD">National Geographic ELD (Reach/Edge)</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="form-label">Target Grade Band</label>
-                  <select id="vscript-grade" class="form-select">
-                    <option value="6th Grade">6th Grade</option>
-                    <option value="7th Grade">7th Grade</option>
-                    <option value="8th Grade">8th Grade</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="form-label">WIDA ELD Proficiency Level</label>
-                  <select id="vscript-eld" class="form-select">
-                    <option value="entering">WIDA Level 1 (Entering)</option>
-                    <option value="emerging">WIDA Level 2 (Emerging)</option>
-                    <option value="developing">WIDA Level 3 (Developing)</option>
-                    <option value="expanding">WIDA Level 4 (Expanding)</option>
-                    <option value="bridging">WIDA Level 5-6 (Bridging/Reaching)</option>
-                  </select>
-                </div>
-              </div>
-
-              <button type="button" class="btn btn-primary" id="btn-generate-verbatim-script">Generate Lesson Routine Script</button>
-
-              <div id="verbatim-script-output" class="result-box" style="display: none; margin-top: 24px;">
-                <!-- Generated Script -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Stem Builder -->
-          <div id="gentab-stems" class="gentab-content" style="display: none;">
-            <div class="generator-card">
-              <h3 style="color: var(--cardinal-red); font-family: var(--font-heading); margin-bottom: 12px;">Curriculum Academic Sentence Stem Builder</h3>
-              <p style="color: var(--text-secondary); margin-bottom: 20px;">Filter and customize stems designed specifically for StudySync Think Questions, Inspire Science CER, Savvas DBQ/Math, and NatGeo ELD Language Frames.</p>
-              
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px;">
-                <div>
-                  <label class="form-label">Subject & Curriculum</label>
-                  <select id="stem-subject" class="form-select">
-                    <option value="all">All Subjects</option>
-                    <option value="ELA">ELA (StudySync)</option>
-                    <option value="Science">Science (Inspire Science CER)</option>
-                    <option value="SocialStudies">Social Studies (Savvas DBQ)</option>
-                    <option value="Math">Math (Savvas EnVision)</option>
-                    <option value="ELD">ELD (NatGeo Frames)</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="form-label">Cognitive Purpose</label>
-                  <select id="stem-category" class="form-select">
-                    <option value="all">All Categories</option>
-                    <option value="Analysis">Analysis</option>
-                    <option value="Evidence">Evidence</option>
-                    <option value="Evaluation">Evaluation</option>
-                    <option value="Hypothesis">Hypothesis / Strategy</option>
-                    <option value="Sequence & Cause">Sequence & Cause (ELD)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div id="stems-results-list" style="display: flex; flex-direction: column; gap: 12px;">
-                <!-- Generated Stems -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Video Game Lit Deck -->
-          <div id="gentab-videogame" class="gentab-content" style="display: none;">
-            <div class="generator-card">
-              <h3 style="color: var(--cardinal-red); font-family: var(--font-heading); margin-bottom: 12px;">Curriculum Video Game Discussion Cards</h3>
-              <p style="color: var(--text-secondary); margin-bottom: 20px;">Hook student engagement by framing StudySync Blasts, Inspire Science Phenomena, Savvas DBQs, and NatGeo Stories as video game quests!</p>
-
-              <div id="game-cards-container" class="mantra-grid">
-                <!-- Dynamically Rendered Game Cards -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Choral Vocab Maker -->
-          <div id="gentab-vocab" class="gentab-content" style="display: none;">
-            <div class="generator-card">
-              <h3 style="color: var(--cardinal-red); font-family: var(--font-heading); margin-bottom: 12px;">Mantra 6: Choral Vocabulary Routine Script Maker</h3>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 20px;">
-                <div>
-                  <label class="form-label">Target Curriculum Word</label>
-                  <input type="text" id="vocab-word" class="form-control" placeholder="e.g., SYMBIOSIS / PERSPECTIVE">
-                </div>
-                <div>
-                  <label class="form-label">Part of Speech</label>
-                  <input type="text" id="vocab-pos" class="form-control" placeholder="e.g., Noun / Adjective">
-                </div>
-                <div>
-                  <label class="form-label">Kid-Friendly Definition</label>
-                  <input type="text" id="vocab-def" class="form-control" placeholder="e.g., Two organisms living together for mutual benefit">
-                </div>
-                <div>
-                  <label class="form-label">Physical Gesture</label>
-                  <input type="text" id="vocab-gesture" class="form-control" placeholder="e.g., Interlock fingers of both hands">
-                </div>
-              </div>
-              <button type="button" class="btn btn-primary" id="btn-build-vocab-script">Generate 5-Step Choral Script</button>
-
-              <div id="vocab-script-output" class="result-box" style="display: none;">
-                <!-- Generated Choral Script -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Multi-Pass Reader -->
-          <div id="gentab-closeread" class="gentab-content" style="display: none;">
-            <div class="generator-card">
-              <h3 style="color: var(--cardinal-red); font-family: var(--font-heading); margin-bottom: 12px;">Mantra 5: Multi-Pass Close Reading Protocol Designer</h3>
-              <p style="color: var(--text-secondary); margin-bottom: 20px;">Design text-specific reading passes aligned to StudySync First/Close/Focus Reads or NatGeo Edge readings.</p>
-
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 20px;">
-                <div>
-                  <label class="form-label">Text Title / Topic</label>
-                  <input type="text" id="cr-title" class="form-control" placeholder="e.g., StudySync: The Diary of Anne Frank">
-                </div>
-                <div>
-                  <label class="form-label">Curriculum Reading Format</label>
-                  <select id="cr-type" class="form-select">
-                    <option value="StudySync">StudySync (First Read -> Close Read -> Focus Read)</option>
-                    <option value="InspireScience">Inspire Science (Engage -> Explore -> Explain CER)</option>
-                    <option value="SavvasDBQ">Savvas Social Studies (DBQ Primary Source HIPP)</option>
-                    <option value="NatGeoELD">National Geographic ELD (Picture Walk -> Vocab -> Language Objective)</option>
-                  </select>
-                </div>
-              </div>
-              <button type="button" class="btn btn-primary" id="btn-build-closeread">Generate 3-Pass Reading Questions</button>
-
-              <div id="closeread-output" class="result-box" style="display: none;">
-                <!-- Generated Close Reading Plan -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Gap Analysis Matrix -->
-          <div id="gentab-gaps" class="gentab-content" style="display: none;">
-            <div class="generator-card">
-              <h3 style="color: var(--cardinal-red); font-family: var(--font-heading); margin-bottom: 12px;">Mantra 8: Curriculum Work Diagnostic & Reteach Matrix</h3>
-              <p style="color: var(--text-secondary); margin-bottom: 20px;">Select an observed student work error pattern in StudySync, Inspire Science, Savvas, or NatGeo ELD to reveal the diagnostic root cause and warm-up fix.</p>
-
-              <div style="margin-bottom: 20px;">
-                <label class="form-label">Observed Student Work Error Pattern</label>
-                <select id="gap-error-select" class="form-select">
-                  <option value="1">StudySync: Student cites text quote but fails to explain connection to prompt.</option>
-                  <option value="2">Inspire Science: Student writes a Claim but confuses Scientific Reasoning with raw data.</option>
-                  <option value="3">Savvas History: Student identifies historical fact but misses HIPP Author Point of View.</option>
-                  <option value="4">Savvas Math: Student sets up ratio correctly but makes cross-multiplication errors.</option>
-                  <option value="5">NatGeo ELD: Student uses target vocabulary but omits required past-tense verb endings.</option>
-                </select>
-              </div>
-
-              <div id="gap-diagnostic-output" class="result-box">
-                <!-- Diagnostic Output -->
-              </div>
-            </div>
+          <div id="generator-suite-content">
+            <!-- Rendered dynamically by app.js -->
           </div>
         </section>
 
-        <!-- 5. ROBUST PRINTABLE STUDIO VIEW -->
+        <!-- VIEW 5: PRINTABLE STUDIO -->
         <section id="view-printable-studio" class="tab-view">
-          <div class="hero-banner" style="background: linear-gradient(135deg, #473536 0%, #8B2C28 100%);">
-            <span class="hero-badge">Official ECMS Print Studio</span>
-            <h2 class="hero-title">Printable Studio & Anchor Charts</h2>
-            <p class="hero-description">
-              High-impact 8.5x11 classroom posters, student desk reference cards, annotation bookmarks, and leader walkthrough forms featuring official ECMS Cardinal logos.
-            </p>
+          <div class="hero-banner" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+            <div>
+              <span class="hero-badge">Printable Studio & Classroom Art</span>
+              <h1 class="hero-title">High-Impact Classroom Posters & Bilingual Desk Cards</h1>
+              <p class="hero-description">
+                Generate 8.5" x 11" full-page classroom posters, 4-up bilingual English/Spanish student desk reference cards, and leader alignment sheets.
+              </p>
+            </div>
+            <div class="print-studio-controls">
+              <button class="btn btn-primary" onclick="window.print()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                Print Studio Output
+              </button>
+            </div>
           </div>
 
           <div class="nav-tabs print-studio-controls">
-            <button class="tab-link active" data-printtab="master-poster">📜 Master School Poster (1-Page Grid)</button>
-            <button class="tab-link" data-printtab="class-posters">🖼️ Full-Page Classroom Posters (8.5x11)</button>
-            <button class="tab-link" data-printtab="desk-cards">💳 Student Desk Reference Cards (4-Up)</button>
-            <button class="tab-link" data-printtab="bookmarks">🔖 Annotation Bookmark Strips (3-Up)</button>
-            <button class="tab-link" data-printtab="walkthrough-rubric">📋 Leader Walkthrough Rubric Sheet</button>
+            <button class="tab-link active" data-printtab="print-master">Master Poster (8-in-1)</button>
+            <button class="tab-link" data-printtab="print-single-posters">Full-Page Posters (1-8)</button>
+            <button class="tab-link" data-printtab="print-bilingual-cards">Bilingual Student Desk Cards (English / Spanish)</button>
+            <button class="tab-link" data-printtab="print-leader-matrix">Tulsa Way & TLE Print Sheet</button>
           </div>
 
-          <div style="display: flex; gap: 16px; margin-bottom: 28px;" class="print-studio-controls">
-            <button class="btn btn-primary" onclick="window.print();" style="padding: 12px 24px; font-size: 1rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-              Print Selected Resource Template (Ctrl + P)
-            </button>
-          </div>
-
-          <!-- Master 1-Page Poster View -->
-          <div id="printtab-master-poster" class="printtab-content active">
-            <div class="print-master-poster" id="master-poster-render">
-              <!-- Dynamically Rendered Master Poster -->
-            </div>
-          </div>
-
-          <!-- Full Page Individual Posters -->
-          <div id="printtab-class-posters" class="printtab-content" style="display: none;">
-            <div id="full-posters-render">
-              <!-- Dynamically Rendered Full-Page Posters -->
-            </div>
-          </div>
-
-          <!-- Desk Reference Cards (4-Up) -->
-          <div id="printtab-desk-cards" class="printtab-content" style="display: none;">
-            <div class="desk-cards-grid" id="desk-cards-render">
-              <!-- Dynamically Rendered Desk Cards -->
-            </div>
-          </div>
-
-          <!-- Annotation Bookmark Strips (3-Up) -->
-          <div id="printtab-bookmarks" class="printtab-content" style="display: none;">
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" id="bookmarks-render">
-              <!-- Dynamically Rendered Bookmarks -->
-            </div>
-          </div>
-
-          <!-- Leader Walkthrough Rubric Sheet -->
-          <div id="printtab-walkthrough-rubric" class="printtab-content" style="display: none;">
-            <div class="print-master-poster" id="rubric-sheet-render">
-              <!-- Dynamically Rendered Rubric Sheet -->
-            </div>
+          <div id="printable-studio-display">
+            <!-- Rendered dynamically -->
           </div>
         </section>
 
-        <!-- 6. PD PRESENTATION DECK VIEW -->
-        <section id="view-pd-presenter" class="tab-view">
-          <div class="hero-banner">
-            <span class="hero-badge">Staff Development Suite</span>
-            <h2 class="hero-title">Professional Development Presentation Deck</h2>
-            <p class="hero-description">
-              Introduce the 8 ECMS Literacy Mantras across StudySync, Inspire Science, Savvas, and NatGeo ELD with our built-in interactive presentation mode.
-            </p>
-          </div>
-          <button class="btn btn-primary" id="btn-launch-pd-inline" style="padding: 16px 32px; font-size: 1.1rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            Launch Full Screen Presentation Mode
-          </button>
-        </section>
-
-      </div>
-    </main>
+      </main>
+    </div>
   </div>
 
-  <!-- Detail Modal -->
-  <div class="modal-overlay" id="mantra-modal">
+  <!-- MANTRA DETAIL MODAL -->
+  <div id="mantra-modal" class="modal-overlay">
     <div class="modal-container">
       <div class="modal-header">
-        <h3 class="modal-title" id="modal-mantra-title">Mantra Detail</h3>
-        <button class="modal-close-btn" id="modal-close">&times;</button>
+        <h3 id="modal-mantra-title" class="modal-title">Mantra Detail</h3>
+        <button class="modal-close-btn" onclick="app.closeModal()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
       </div>
-      <div class="modal-body" id="modal-mantra-body">
-        <!-- Dynamic Content -->
+      <div id="modal-mantra-body" class="modal-body">
+        <!-- Rendered dynamically -->
       </div>
     </div>
   </div>
 
-  <!-- Fullscreen PD Slides Overlay -->
-  <div class="slide-overlay" id="slide-overlay">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-      <span style="font-size: 0.9rem; color: var(--bright-accent-red); font-weight: 700;" id="slide-counter">Slide 1 / 10</span>
-      <button class="btn btn-secondary" id="btn-close-slides" style="background: rgba(255,255,255,0.1); color: white; border: none;">Exit Presentation (Esc)</button>
-    </div>
-
+  <!-- PD PRESENTATION SLIDE OVERLAY -->
+  <div id="slide-overlay" class="slide-overlay">
     <div class="slide-content-box">
-      <h2 class="slide-title" id="slide-heading">Title</h2>
-      <div class="slide-body" id="slide-body">Content</div>
+      <span id="slide-number-badge" class="game-badge" style="align-self:flex-start;">Slide 1 of 10</span>
+      <h2 id="slide-title" class="slide-title">PD Deck Title</h2>
+      <div id="slide-body" class="slide-body">
+        <!-- Slide content -->
+      </div>
     </div>
-
     <div class="slide-controls">
-      <button class="btn btn-secondary" id="slide-prev-btn">&larr; Previous Slide</button>
-      <div style="color: var(--text-muted); font-size: 0.9rem;">Use Left / Right Arrow keys to navigate</div>
-      <button class="btn btn-primary" id="slide-next-btn">Next Slide &rarr;</button>
+      <button class="btn btn-secondary" onclick="app.prevSlide()">← Previous Slide</button>
+      <button class="btn btn-primary" onclick="app.closePdSlides()">Exit Presentation Mode</button>
+      <button class="btn btn-secondary" onclick="app.nextSlide()">Next Slide →</button>
     </div>
   </div>
 
-  <!-- JavaScript Modules -->
+  <!-- Scripts -->
   <script src="mantrasData.js"></script>
   <script src="app.js"></script>
 </body>

@@ -1,6 +1,6 @@
 /* ECMS 8 Literacy Mantras Toolkit - Master Design System */
 :root {
-  /* Brand Color Palette */
+  /* Official Brand Color Palette */
   --cardinal-red: #AB3633;
   --deep-cardinal: #8B2C28;
   --bright-accent-red: #D48473;
@@ -8,6 +8,13 @@
   --warm-gray: #473536;
   --off-white: #F7F5F2;
   --pure-white: #FFFFFF;
+
+  /* Tulsa Way Color Tokens */
+  --tulsa-culture: #E67E22;      /* Culture of Learning - Orange */
+  --tulsa-content: #2980B9;      /* Essential Content - Blue */
+  --tulsa-ownership: #D35400;    /* Academic Ownership - Amber */
+  --tulsa-demo: #8E44AD;         /* Demonstration of Learning - Purple */
+  --tulsa-tle: #AB3633;          /* TLE Rubric Dimension - Cardinal Red */
 
   /* Functional Token Mapping (Light Theme Default) */
   --bg-primary: #F7F5F2;
@@ -113,13 +120,6 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-.brand-logo-img {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-  flex-shrink: 0;
 }
 
 .brand-title {
@@ -500,14 +500,92 @@ body {
   gap: 8px;
 }
 
-/* HIGH-IMPACT PRINT STUDIO VISUALS */
-.printable-studio-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+/* TULSA WAY & TLE RUBRIC BADGES & TABLES */
+.tulsa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Master Poster Print Box */
+.tulsa-badge-culture { background: rgba(230, 126, 34, 0.15); color: #D35400; border: 1px solid #E67E22; }
+.tulsa-badge-content { background: rgba(41, 128, 185, 0.15); color: #1F618D; border: 1px solid #2980B9; }
+.tulsa-badge-ownership { background: rgba(211, 84, 0, 0.15); color: #A04000; border: 1px solid #D35400; }
+.tulsa-badge-demo { background: rgba(142, 68, 173, 0.15); color: #6C3483; border: 1px solid #8E44AD; }
+.tulsa-badge-tle { background: rgba(171, 54, 51, 0.15); color: #AB3633; border: 1px solid #AB3633; }
+
+.crosswalk-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.crosswalk-table th {
+  background-color: var(--charcoal);
+  color: var(--off-white);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.crosswalk-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.92rem;
+  vertical-align: top;
+}
+
+.crosswalk-table tr:hover {
+  background-color: var(--bg-tertiary);
+}
+
+/* LEXILE READING GAP PROMPTING CARDS */
+.lexile-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--brand-accent-glow);
+  color: var(--cardinal-red);
+  border: 1px solid var(--cardinal-red);
+}
+
+.prompt-box {
+  background-color: #2B1F20;
+  color: #F7F5F2;
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  border-left: 4px solid var(--bright-accent-red);
+  margin-top: 10px;
+}
+
+.prompt-box ul {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.prompt-box li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* HIGH-IMPACT PRINT STUDIO VISUALS */
 .print-master-poster {
   background: #FFFFFF;
   border: 12px solid var(--cardinal-red);
@@ -530,12 +608,6 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
-}
-
-.print-school-logo {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
 }
 
 .print-master-title {
@@ -833,41 +905,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 12px;
-}
-
-/* Walkthrough Live Observation Form */
-.observation-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.checkbox-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
-}
-
-.checkbox-card {
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  padding: 14px 16px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.checkbox-card:hover {
-  border-color: var(--brand-primary);
-}
-
-.checkbox-card input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--cardinal-red);
 }
 
 /* Presentation / Slide Mode Overlay */
